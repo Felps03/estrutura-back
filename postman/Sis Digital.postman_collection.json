@@ -1,0 +1,64 @@
+{
+  "info": {
+    "_postman_id": "022c4730-3d8f-4287-917a-98b181376793",
+    "name": "Sis Digital",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "id": "2c7c2820-6a4f-48c5-b95e-828fce1d675e",
+            "exec": [
+              "pm.test(\"[SUCESS] Should give status code 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});\r",
+              "\r",
+              "pm.test(\"[SUCESS] Should body match it Welcome to Sis Digital\", function () {\r",
+              "    pm.expect(pm.response.text()).to.include(\"Welcome to Sis Digital\");\r",
+              "});\r",
+              "\r",
+              "pm.test(\"[FAIL] Should not give status code 503\", function () {\r",
+              "    pm.response.to.not.have.status(503);\r",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://teste-node.herokuapp.com/health",
+          "protocol": "https",
+          "host": ["teste-node", "herokuapp", "com"],
+          "path": ["health"]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "684dadd8-b0e4-4932-a88c-d8ef8a080089",
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "0f898069-f8a4-4736-a9e2-c3026a8c8dd8",
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    }
+  ],
+  "protocolProfileBehavior": {}
+}
